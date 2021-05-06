@@ -1,5 +1,4 @@
 import './App.css';
-import data from './data';
 import ItemContainer from './ItemContainer'
 
 function App() {

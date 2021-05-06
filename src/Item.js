@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import ButtonConainer from './ButtonContainer';
+import ButtonContainer from './ButtonContainer';
 import Details from './Details';
-const Item = ()=>{
+const Item = ({item})=>{
+   
 return (
-    <div>
-        sup dude
-        <ButtonConainer/>
-       <Details/> 
-    </div>
-)
+  <div>
+    <Details item={item} />
+    <ButtonContainer item={item} />
+  </div>
+);
 };
 export default Item;

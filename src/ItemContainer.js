@@ -1,11 +1,18 @@
-import React, {useState } from 'react';
-import Item from './Item'
-const ItemContainer = ()=>{
-    return(
-        <div>
-                <h1>hello world</h1>
-<Item/>
-        </div>
-    );
-}
+import React, { useState, useContext } from "react";
+import Item from "./Item";
+import { useGlobalContext } from "./Context";
+
+
+const ItemContainer = () => {
+  const {items} = useGlobalContext();
+  return (
+    <div>
+      <header></header>
+      {items.map((item) => {
+        const { id } = item;
+        return <Item key={id} item={item} />;
+      })}
+    </div>
+  );
+};
 export default ItemContainer;
