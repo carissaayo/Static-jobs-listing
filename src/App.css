@@ -11,6 +11,7 @@
 body {
   background-color: hsl(180, 52%, 96%);
   font-size: 15px;
+  font-family: 'Spartan', sans-serif;
 }
 button,
 button:hover {
@@ -86,6 +87,7 @@ header {
 .company-info {
   display: flex;
   margin-bottom: 15px;
+  align-items: center;
 }
 .company-info h4 {
   color: hsl(180, 29%, 50%);
@@ -107,6 +109,9 @@ header {
   color: white;
   background-color: hsl(180, 14%, 20%);
   text-transform: uppercase;
+}
+.company-info .latest,.company-info .featured {
+  padding-top:10px
 }
 .item section {
   text-align: left;
