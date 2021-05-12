@@ -1,14 +1,17 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import Item from "./Item";
 import { useGlobalContext } from "./Context";
-
+import FilterMenu from "./FilterMenu";
 
 const ItemContainer = () => {
-  const {items} = useGlobalContext();
+  const { filteredList, filters} = useGlobalContext();
+  
   return (
-    <div>
+    <div className="items-con">
       <header></header>
-      {items.map((item) => {
+      {filters.length > 0 && <FilterMenu />}
+
+      {filteredList.map((item) => {
         const { id } = item;
         return <Item key={id} item={item} />;
       })}

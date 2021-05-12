@@ -1,12 +1,9 @@
-import './App.css';
-import ItemContainer from './ItemContainer'
-
+import "./App.css";
+import ItemContainer from "./ItemContainer";
 function App() {
-
   return (
     <div className="App">
-      <ItemContainer/>
-     
+      <ItemContainer />
     </div>
   );
 }

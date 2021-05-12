@@ -1,37 +1,35 @@
-import React, {  } from "react";
-import { useGlobalContext } from "./Context";
+import React from "react";
+
 
 const Details = ({ item }) => {
-    const {  setIsFeatured} = useGlobalContext();
-  
-const {
-  company,
-  logo,
-  latest,
-  featured,
-  position,
-  location,
-  postedAt,
-  contract,
-} = item;
+  const {
+    company,
+    logo,
+    latest,
+    featured,
+    position,
+    location,
+    postedAt,
+    contract,
+  } = item;
   return (
-    <section>
+    <section className="item">
       <div className="image-con">
-        <img alt='logo' src={logo} />
+        <img alt="logo" src={logo} />
       </div>
-      <section className="company-info">
-        <div>
+      <section>
+        <div className="company-info">
           <h4>{company}</h4>
-          {latest ? setIsFeatured(true) : setIsFeatured(false)}
-          <p className="latest">{latest ? `new` : null}</p>
-          {featured ? setIsFeatured(true) : setIsFeatured(false)}
-          <p className="featured">{featured ? "featured" : null}</p>
+          <p className={latest ? `latest` : ""}>{latest ? `NEW!` : null}</p>
+          <p className={featured ? "featured" : ""}>
+            {featured ? "featured" : null}
+          </p>
         </div>
         <h2>{position}</h2>
-        <div class="details">
+        <div className="details">
           <p>{postedAt}</p>
-          <p>{contract}</p>
-          <p>{location}</p>
+          <li>{contract}</li>
+          <li>{location}</li>
         </div>
       </section>
     </section>

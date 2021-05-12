@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ButtonContainer from './ButtonContainer';
 import Details from './Details';
+
 const Item = ({item})=>{
-   
+   const {featured}=item;
 return (
-  <div>
+  <div className={`${featured ? "item-con item-featured" : "item-con"}`}>
     <Details item={item} />
     <ButtonContainer item={item} />
   </div>

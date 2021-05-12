@@ -47,7 +47,7 @@ const data=[
   {
     "id": 4,
     "company": "MyHome",
-    "logo": "src/images/myhome.svg",
+    "logo": "./images/myhome.svg",
     "latest": false,
     "featured": false,
     "position": "Junior Frontend Developer",

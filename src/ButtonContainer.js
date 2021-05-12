@@ -1,19 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
+import { useGlobalContext } from "./Context";
 
 const ButtonConainer = ({ item }) => {
+  const {
+    handleTagClick,
+  } = useGlobalContext();
+  
   const { role, level, languages, tools } = item;
+  const tags = [role, level];
+  
+
+  if (languages) tags.push(...languages);
+  if (tools) tags.push(...tools);
+
   return (
-    <section>
-      <button className="btn">{role}</button>
-      <button className="btn">{level}</button>
-      {/* <button className="btn">{languages}</button> */}
-      {languages.map((language) => {
-        return <button className="btn">{language}</button>;
-      })}
-      {/* {tools.length >= 1 ? <button className="btn">{tools}</button> : null} */}
-      {/* <button className="btn"></button> */}
-      {tools.map((tool) => {
-        return <button className="btn">{tool}</button>;
+    <section className="btn-con">
+      {tags.map((tag, index) => {
+        return (
+          <button
+            key={index}
+            onClick={()=>handleTagClick(tag)}
+            className="btn"
+          >
+            {tag}
+          </button>
+        );
       })}
     </section>
   );
