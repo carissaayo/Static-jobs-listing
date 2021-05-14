@@ -270,4 +270,11 @@ section h2 {
     grid-template-columns: repeat(2, 100px);
     row-gap: 10px;
   }
+  .details {
+    
+    font-size: 12px;
+  }
+  .item h2 {
+    font-size: 15px;
+  }
 }
